@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>User Form</title>
+</head>
+<body>
+<h1>User Form</h1>
+<form action="#" th:action="@{/submitForm}" th:object="${user}" method="post">
+    <label for="name">Name:</label>
+    <input type="text" id="name" th:field="*{name}" /><br/>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" th:field="*{email}" /><br/>
+
+    <label for="gender">Gender:</label>
+    <input type="radio" id="male" th:field="*{gender}" value="Male" /> Male
+    <input type="radio" id="female" th:field="*{gender}" value="Female" /> Female<br/>
+
+    <label for="country">Country:</label>
+    <select id="country" th:field="*{country}">
+        <option value="USA">USA</option>
+        <option value="Canada">Canada</option>
+        <option value="Other">Other</option>
+    </select><br/>
+
+    <button type="submit">Submit</button>
+</form>
+</body>
+</html>
